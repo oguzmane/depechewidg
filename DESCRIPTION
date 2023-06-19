@@ -1,0 +1,5 @@
+Package: depeche_widg
+Type: Package
+Title: Tools for front-end interactive widgets in R
+Version: 0.0.1.0
+RoxygenNote: 7.2.3
