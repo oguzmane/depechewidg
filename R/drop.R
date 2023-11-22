@@ -15,7 +15,7 @@ buttonFUN <- function(visualList,metricVec) {
     
   }
   
-  randRange <- 10000000:99999999
+  randRange <- 99999999
   
   main <-data.frame(value=sample.int(randRange,length(metricVec)),
                     name=metricVec)
