@@ -7,6 +7,7 @@
 #' @examples 
 #' tab_vis <- tabFUN(list(table1,plot1),c("Table","Plot"))
 #' @export
+
 tabFUN <- function(visualList,tabVec) {
   
   if (length(visualList)!=length(tabVec)) {
@@ -75,17 +76,14 @@ tabFUN <- function(visualList,tabVec) {
   background-color: #ddd;
   color: black;
   }"),
-  htmltools::div(id=paste0("navbar",rand),
-                 class="top",
-                 aTag,
-  ),
   htmltools::br(),
   htmltools::br(),
   htmltools::tags$script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"),
-  htmltools::tags$script(paste0("const rand = ",rand)),
-  htmltools::tags$script(paste0("const arr = [",arr,"]")),
-  htmltools::tags$script(
+  htmltools::tags$script(paste0(
     "$(document).ready(function(){
+    
+    const rand =",rand," 
+    const arr = [",arr,"]
     $.each( arr, function( index, value ){
   
       $('a#tab'+rand+value).on('click',function() {
@@ -112,9 +110,14 @@ tabFUN <- function(visualList,tabVec) {
   
   });
 "
-  ),
-divTag
-  )
+  )),
+htmltools::div(id=paste0("navbar",rand),
+               class="top",
+               aTag,
+),
+htmltools::br(),
+htmltools::br(),
+divTag)
   
   
 }
