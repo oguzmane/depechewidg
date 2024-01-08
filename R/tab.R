@@ -76,8 +76,6 @@ tabFUN <- function(visualList,tabVec) {
   background-color: #ddd;
   color: black;
   }"),
-  htmltools::br(),
-  htmltools::br(),
   htmltools::tags$script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"),
   htmltools::tags$script(paste0(
     "$(document).ready(function(){
