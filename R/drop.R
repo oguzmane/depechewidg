@@ -75,6 +75,7 @@ color: rgb(89, 89, 89);
                 var demovalue = $(this).val();
                 $('div.inv'+inVal.value).hide();
                 $('#drop'+demovalue).fadeIn();
+                window.dispatchEvent(new Event('resize')); //FIX 1.1
               });
               $( window ).load(function () {
                   $('div.inv2'+inVal.value).hide();

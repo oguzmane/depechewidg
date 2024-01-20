@@ -1,0 +1,81 @@
+---
+title: ''
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=F, message=F, warning=F}
+
+library(tidyverse)
+library(echarts4r)
+library(htmltools)
+library(reactable)
+setwd("..")
+source("R/global_utils.R")
+source("modalFUN.R")
+
+```
+
+```{r echo=F}
+
+graph <- data.frame(x=seq(1,4),
+                 y=seq(1,4)*8) %>%
+  e_charts(x) %>%
+  e_line(y)
+
+vis_list <- list(modalFUN(graph,"nice"),
+                 modalFUN(graph,"wow"))
+
+data.frame(name=c("A","B"),
+           value=c(1,2)) %>%
+  reactable(.,
+            columns=list(
+              name = colDef(cell=function(value,index) {
+
+                tags$html(vis_list[[index]]$children[[1]],
+                          vis_list[[index]]$children[[2]])
+
+              })
+            ))
+
+vis_list[[1]]$children[[3]]
+vis_list[[1]]$children[[4]]
+vis_list[[2]]$children[[3]]
+vis_list[[2]]$children[[4]]
+
+
+
+
+
+```
+
+
+<!-- ```{r echo=F} -->
+
+<!-- graph <- data.frame(x=seq(1,4), -->
+<!--                  y=seq(1,4)*8) %>% -->
+<!--   e_charts(x) %>% -->
+<!--   e_line(y) -->
+
+<!-- modalFUN(graph,"ok") -->
+
+<!-- modalFUN(graph,"try") -->
+
+<!-- modalFUN(graph,"third") -->
+
+<!-- ``` -->
+
+
+
+
+
+
+
+
+
+
+
+
