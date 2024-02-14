@@ -2,3 +2,5 @@
 
 export(buttonFUN)
 export(floatFUN)
+export(modalFUN)
+export(tabFUN)

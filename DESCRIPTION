@@ -1,5 +1,5 @@
 Package: depechewidg
 Type: Package
-Title: Tools for front-end interactive widgets in R
+Title: Front-End Tools for Interactive Visuals in R
 Version: 0.0.1.0
 RoxygenNote: 7.2.3
