@@ -7,7 +7,6 @@
 #' @examples 
 #' tab_vis <- tabFUN(list(table1,plot1),c("Table","Plot"))
 #' @export
-
 tabFUN <- function(visualList,tabVec) {
   
   if (length(visualList)!=length(tabVec)) {
