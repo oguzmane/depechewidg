@@ -5,9 +5,9 @@
 #' @param metricVec a vector of character names for each visual in the dropdown
 #' @return a visual with a dropdown button
 #' @examples 
-#' vis_button <- buttonFUN(list(table1,plot1),c("Table","Plot"))
+#' vis_drop <- dropFUN(list(table1,plot1),c("Table","Plot"))
 #' @export
-buttonFUN <- function(visualList,metricVec) {
+dropFUN <- function(visualList,metricVec) {
   
   if (length(visualList)!=length(metricVec)) {
     

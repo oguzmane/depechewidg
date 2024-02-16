@@ -3,10 +3,10 @@
 #' Create a two-column layout for lists of different visuals 
 #' @param leftList the list for all visuals on the left column
 #' @param rightList the list for all visuals on the right column
-#' @param width a two-numbered vector for the relative width of left and right, in %
+#' @param width a two-numbered vector for the relative width of left and right (in percent)
 #' @return a two-column layout
 #' @examples 
-#' two_column_vis <- floatFUN(table1,plot1,c(40,60))
+#' two_column_vis <- floatFUN(list(table1),list(plot1),c(40,60))
 #' @export
 floatFUN <- function(leftList,rightList,width) {
   

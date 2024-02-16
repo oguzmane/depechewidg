@@ -11,7 +11,7 @@ floatFUN(leftList, rightList, width)
 
 \item{rightList}{the list for all visuals on the right column}
 
-\item{width}{a two-numbered vector for the relative width of left and right, in %}
+\item{width}{a two-numbered vector for the relative width of left and right (in percent)}
 }
 \value{
 a two-column layout
@@ -20,5 +20,5 @@ a two-column layout
 Create a two-column layout for lists of different visuals
 }
 \examples{
-two_column_vis <- floatFUN(table1,plot1,c(40,60))
+two_column_vis <- floatFUN(list(table1),list(plot1),c(40,60))
 }
