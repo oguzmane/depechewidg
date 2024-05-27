@@ -3,11 +3,14 @@
 #' Create a dropdown button for a list of visuals 
 #' @param visualList the list of all visuals 
 #' @param metricVec a vector of character names for each visual in the dropdown
+#' @param num_breaks an integer to determine number of breaks (tags$br()) to insert between dropdown button and visuals
+#' @param fontSize an integer to specify font size (in pixels) of dropdown button labels
 #' @return a visual with a dropdown button
 #' @examples 
 #' vis_drop <- dropFUN(list(table1,plot1),c("Table","Plot"))
 #' @export
-dropFUN <- function(visualList,metricVec) {
+dropFUN <- function(visualList,metricVec,num_breaks=NULL,
+                    fontSize=14) {
   
   if (length(visualList)!=length(metricVec)) {
     
@@ -53,11 +56,17 @@ dropFUN <- function(visualList,metricVec) {
     
   }
   
+  if (is.null(num_breaks)) {
+    breaks_to_add <- NULL
+  } else {
+    breaks_to_add <- replicate(num_breaks, tags$br(), simplify = FALSE)
+  }
+  
   htmltools::tags$html(
     htmltools::tags$style(".metric-drop {
   color: rgb(89, 89, 89);
   padding: 16px;
-  font-size: 14px;
+  font-size: ",paste0(fontSize,"px"),";
   border-color: rgb(89, 89, 89);
   border-radius: 36px;
   font-family:'Verdana';
@@ -84,9 +93,11 @@ color: rgb(89, 89, 89);
     htmltools::tags$select(id="select_id",
                            class="metric-drop",
                            optionTag),
-    htmltools::tags$br(),
-    htmltools::tags$br(),
+    breaks_to_add,
     divTag)
   
   
 }
+
+
+

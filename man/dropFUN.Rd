@@ -4,12 +4,16 @@
 \alias{dropFUN}
 \title{Dropdown button creator}
 \usage{
-dropFUN(visualList, metricVec)
+dropFUN(visualList, metricVec, num_breaks = NULL, fontSize = 14)
 }
 \arguments{
 \item{visualList}{the list of all visuals}
 
 \item{metricVec}{a vector of character names for each visual in the dropdown}
+
+\item{num_breaks}{an integer to determine number of breaks (tags$br()) to insert between dropdown button and visuals}
+
+\item{fontSize}{an integer to specify font size (in pixels) of dropdown button labels}
 }
 \value{
 a visual with a dropdown button
